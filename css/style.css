@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  padding-top: 4rem;
+  background-color: #f0f3f8;
+}
+
+.slider {
+  position: relative;
+  padding: 0 28px;
+}
+
+.slider-container {
+  max-width: 1548px;
+  margin: 0 auto;
+  transition: 300ms;
+  padding: 15px 0;
+  overflow-x: auto;
+}
+
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  height: 100%;
+  align-items: center;
+  display: none;
+  opacity: 0.8;
+  z-index: 999;
+  outline: none;
+}
+
+.scroll-button:hover {
+  background: rgba(255, 255, 255, 0.377);
+}
+
+.scroll-button.prev {
+  left: 0;
+}
+
+.scroll-button.next {
+  right: 0;
+}
+
+.scroll-button span {
+  font-size: 28px;
+  font-weight: 600;
+  color: #0072cc;
+}
+
+.scroll-button[btn-disable="true"] {
+  opacity: 0.45;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.scroll-button[btn-disable="false"]::after,
+.scroll-button[btn-disable="false"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 95%;
+  width: 35px;
+}
+
+.prev[btn-disable="false"]::before {
+  left: 28px;
+  background: linear-gradient(to right, #f0f3f8, #f0f3f800);
+}
+
+.next[btn-disable="false"]::after {
+  right: 28px;
+  background: linear-gradient(to left, #f0f3f8, #f0f3f800);
+}
+
+.list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  width: fit-content;
+  display: flex;
+}
+
+.list-item {
+  box-sizing: border-box;
+  min-width: 8rem;
+  min-height: 140px;
+  background-color: #fff;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  margin: 0 6px;
+}
+
+
+@media (max-width: 1440px) {
+  body {
+    padding: 1rem 0.5rem;
+  }
+}
+
